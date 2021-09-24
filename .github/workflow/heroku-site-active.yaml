@@ -1,0 +1,12 @@
+name: Active heroku website by every hour
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/30 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl "https://happy-friday.herokuapp.com/"
